@@ -1,0 +1,676 @@
+@font-face {
+    font-family: Righteous;
+    src: url(../Fonts/Righteous-Regular.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Righteous;
+    text-decoration: none;
+}
+
+/*Glosario:  
+    1- Todo lo hay en el Header
+    2- Video del Inicio
+    3- Jugadores Imagenes
+    4- Diseño de las Cajas
+    5- Colores de las Cajas
+    6- Imagenes de las Cajas
+    7- Colores de Texto
+    8- Colores de boton cerrar
+    9- Ajustes de tamaño de pantalla
+;*/
+
+body{
+    background-color: rgb(20, 20, 20);
+}
+
+html, body {
+    scroll-behavior: smooth;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/*1-____________ Toda lo que hay en Header_____________*/
+
+header{
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgb(87, 88, 88);
+    background-color: #141414;
+    z-index: 10;
+}
+      
+.logo a{
+    color: rgb(211, 208, 66);
+    font-family: Righteous;
+    font-size: 35px;
+    font-weight: bold;
+    padding-left: 30px;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+}
+nav a{
+    font-size: 25px;
+    color: rgb(211, 208, 66);
+    font-family: righteous;
+    margin: 31px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+nav a:hover{
+    background-color: rgb(66, 64, 64);
+}
+
+/*2-________ Video del Inicio _______*/
+.video{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.video video{
+    margin-top: 115px;
+    margin-bottom: 125px;
+    width: 65%;
+    border-radius: 25px;
+}
+
+/*3-__________ Jugadores Imagenes __________*/
+
+.jugadores, .jugadores2{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.jugadores img, .jugadores2 img{
+    width: 100%;
+    position: relative;
+    transition: transform 0.2s ease-in-out;
+    transform: scale(1);
+    border-radius: 10%;
+    margin-bottom: 40px;
+}
+
+.jugadores img:hover , .jugadores2 img:hover{
+    transform: scale(1.1);
+}
+
+
+  
+/*4-__________ Diseño de las Cajas _________*/
+
+.abrir {
+    width: 23%;
+}
+
+.contenido{
+    z-index: 11;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    padding: 40px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 600ms;
+}
+
+.contenido:target{
+    background: rgba(0,0,0,0.8);
+    visibility: visible;
+    opacity: 1;
+}
+
+.contenido:target .caja1, .contenido:target .caja2, .contenido:target .caja3, .contenido:target .caja4, .contenido:target .caja5 {
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    visibility: visible;
+}
+
+/*5-_________ Colores de la Caja__________*/
+
+.caja1{
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    position: relative;
+    display: flex;
+    background: yellow;
+    visibility: hidden;
+    top: -80%;
+    left: -80%;
+}
+
+.caja2{
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    position: relative;
+    display: flex;
+    background: rgb(96, 162, 173);
+    visibility: hidden;
+    top: -80%;
+    left: -80%;
+}
+
+.caja3{
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    position: relative;
+    display: flex;
+    background: rgb(29, 143, 219);
+    visibility: hidden;
+    top: -80%;
+    left: -80%;
+}
+
+.caja4{
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    position: relative;
+    display: flex;
+    background: rgb(243, 255, 69);
+    visibility: hidden;
+    top: -80%;
+    left: -80%;
+}
+
+.caja5{
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    position: relative;
+    display: flex;
+    background: white;
+    visibility: hidden;
+    top: -80%;
+    left: -80%;
+}
+
+
+/*6-____________ Imagenes de la Caja _____________*/
+
+#pele2{
+    background-image: url(../imagenes/pele2.png);
+}
+#maradona2{
+    background-image: url(../imagenes/maradona2.png);
+}
+#messi2{
+    background-image: url(../imagenes/messi2.png);
+}
+#ronaldo2{
+    background-image: url(../imagenes/ronaldo2.png);
+}
+#zidane2{
+    background-image: url(../imagenes/zidane2.png);
+}
+
+.img {
+    width: 40%;
+    background-size: cover;
+    background-position: center;
+}
+
+.texto, .texto-brasil, .texto-zidane{
+    width: 60%;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+
+/*7-_____________Colores del Texto____________*/
+
+.texto h1{
+    color: white;
+    font-size: 30px;
+    text-shadow: -1px 0 0 black, 1px 0 0 black, 0 -1px 0 black, 0 1px 0 black;
+}
+
+.texto .subtitulo{
+    margin-top: 20px;
+    margin-bottom: -17px;
+    color: white;
+    text-shadow: -1px 0 0 black, 1px 0 0 black, 0 -1px 0 black, 0 1px 0 black;
+    font-weight: bold;
+}
+
+.texto .texto-normal{
+    color: white;
+    margin-top: 20px;
+    font-size: 16px;
+    text-shadow: -1px 0 0 black, 1px 0 0 black, 0 -1px 0 black, 0 1px 0 black;
+}
+
+.texto-brasil h1{
+    color: green;
+    font-size: 30px;
+}
+
+.texto-brasil .subtitulo{
+    margin-top: 20px;
+    margin-bottom: -17px;
+    color: green;
+    font-weight: bold;
+}
+
+.texto-brasil .texto-normal{
+    color: green;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.texto-zidane h1{
+    color: black;
+    font-size: 30px;
+}
+
+.texto-zidane .subtitulo{
+    margin-top: 20px;
+    margin-bottom: -17px;
+    color: black;
+    font-weight: bold;
+}
+
+.texto-zidane .texto-normal{
+    color: black;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+/*8-____________Colores boton cerrar_____________*/
+
+.cerrar{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    background: rgb(20, 20, 20);
+    color: white;
+    border-radius: 50%;
+    line-height: 10px;
+    padding: 20px;
+}
+#video-inicio{
+    scroll-margin-top: 100px;
+}
+#pele, #messi, #maradona{
+    scroll-margin-top: 87px;
+}
+
+/*9-___________ Ajustes de tamaño de Pantalla_____________*/
+
+@media screen and (max-width:900px){
+
+    .logo{
+        max-width: 280px;
+        text-align: center;
+    }
+
+    .caja1, .caja2, .caja3, .caja4, .caja5{
+      flex-direction: column;
+      height: 100%;
+      max-height: 800px;
+    }
+  
+    .img{
+      width: 100%;
+      height: 40%;
+    }
+  
+    .texto, .texto-brasil, .texto-zidane{
+      width: 100%;
+      height: 60%;
+      padding: 80px;
+    }
+  
+    .texto h1, .texto-brasil h1, .texto-zidane h1{
+      font-size: 20px;
+    }
+  
+    .texto p, .texto-brasil p, .texto-zidane p{
+      font-size: 12px;
+    }
+
+    
+  }
+
+@media screen and (max-width:820px){
+    header{
+        width: 100%;
+        padding-top: 17px;
+        padding-bottom: 17px;
+        justify-content: space-around;
+    }
+
+    .logo{
+        max-width: 460px;
+    }
+    .logo a{
+        font-size: 35px;
+    }
+
+    nav a {
+        font-size: 28px;
+        margin: 5px;
+        padding: 5px;
+    }
+    
+    .texto, .texto-brasil, .texto-zidane{
+        width: 100%;
+        height: 60%;
+        padding: 40px;
+      }
+    
+    .texto h1, .texto-brasil h1, .texto-zidane h1{
+        font-size: 40px;
+      }
+    
+    .texto-brasil .texto-normal, .texto-zidane .texto-normal, .texto .texto-normal{
+        font-size: 25px;
+      }
+
+    .texto .subtitulo, .texto-brasil .subtitulo, .texto-zidane .subtitulo{
+        font-size: 27px;
+    }
+
+    .video video{
+        margin-bottom: 70px;
+        margin-top: 160px;
+        width: 90%;
+    } 
+}
+
+@media screen and (max-width:768px){
+    header{
+        width: 100%;
+        padding-top: 17px;
+        padding-bottom: 17px;
+    }
+    .logo a{
+        font-size: 35px;
+        padding: 10px;
+    }
+
+    nav a {
+        font-size: 25px;
+        margin: 5px;
+        padding: 5px;
+    }
+
+    .img{
+        width: 100%;
+        height: 40%;
+        background-position: center 35%;
+      }
+    
+    .texto, .texto-brasil, .texto-zidane{
+        width: 100%;
+        height: 60%;
+        padding: 40px;
+      }
+    
+    .texto h1, .texto-brasil h1, .texto-zidane h1{
+        font-size: 40px;
+      }
+    
+    .texto-brasil .texto-normal, .texto-zidane .texto-normal, .texto .texto-normal{
+        font-size: 25px;
+      }
+
+    .texto .subtitulo, .texto-brasil .subtitulo, .texto-zidane .subtitulo{
+        font-size: 27px;
+    }
+
+    .video video{
+        margin-bottom: 70px;
+        margin-top: 160px;
+        width: 90%;
+    }
+
+}
+  
+@media screen and (max-width: 540px){
+    .texto, .texto-brasil, .texto-zidane{
+        width: 100%;
+        height: 60%;
+        padding: 25px;
+      }
+    
+    .texto h1, .texto-brasil h1, .texto-zidane h1{
+        font-size: 25px;
+      }
+    
+    .texto-brasil .texto-normal, .texto-zidane .texto-normal, .texto .texto-normal{
+        font-size: 16px;
+      }
+
+    .texto .subtitulo, .texto-brasil .subtitulo, .texto-zidane .subtitulo{
+        font-size: 18px;
+    }
+
+    header{
+        width: 100%;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        justify-content: space-between;
+    }
+
+    .logo a{
+        font-size: 20px;
+        margin: 5px;
+        padding-left: 10px;
+    }
+
+    nav a {
+        font-size: 12px;
+        margin: 5px;
+        padding: 5px;
+    }
+
+    .video video{
+        margin-bottom: 70px;
+        margin-top: 80px;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .abrir{
+        width: 40%;
+    }
+
+    .jugadores, .jugadores2{
+        flex-direction: column;
+        justify-content: center;
+    }
+  }
+
+@media screen and (max-width: 425px){
+
+    header{
+        width: 100%;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .logo{
+        max-width: 220px;
+    }
+
+    .logo a{
+        font-size: 16px;
+        padding: 3px;
+    }
+
+    nav a {
+        font-size: 14px;
+        margin: 5px;
+        padding: 5px;
+    }
+
+    .img{
+        width: 100%;
+        height: 40%;
+      }
+    
+    .texto, .texto-brasil, .texto-zidane{
+        width: 100%;
+        height: 60%;
+        padding: 25px;
+      }
+    
+    .texto h1, .texto-brasil h1, .texto-zidane h1{
+        font-size: 25px;
+      }
+    
+    .texto-brasil .texto-normal, .texto-zidane .texto-normal, .texto .texto-normal{
+        font-size: 16px;
+      }
+
+    .texto .subtitulo, .texto-brasil .subtitulo, .texto-zidane .subtitulo{
+        font-size: 18px;
+    }
+
+    .video video{
+        margin-bottom: 70px;
+        margin-top: 80px;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .abrir{
+        width: 65%;
+    }
+
+    .jugadores, .jugadores2{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+}
+
+@media screen and (max-width: 375px){
+
+    header{
+        width: 100%;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .logo{
+        max-width: 150px;
+        text-align: center;
+    }
+
+    .logo a{
+        font-size: 16px;
+        padding: 0;
+    }
+
+    nav a {
+        font-size: 13px;
+        margin: 5px;
+        padding: 5px;
+    }
+
+    .video video{
+        margin-bottom: 70px;
+        margin-top: 80px;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .abrir{
+        width: 65%;
+    }
+
+    .jugadores, .jugadores2{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+}
+
+@media screen and (max-width: 320px) {
+
+    header{
+        width: 100%;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .logo{
+        max-width: 120px;
+        text-align: center;
+    }
+
+    .logo a{
+        font-size: 14px;
+        padding: 2px;
+    }
+
+    nav a {
+        font-size: 12px;
+        margin: 5px;
+        padding: 5px;
+    }
+
+    .texto, .texto-brasil, .texto-zidane{
+        width: 100%;
+        height: 60%;
+        padding: 25px;
+      }
+    
+    .texto h1, .texto-brasil h1, .texto-zidane h1{
+        font-size: 16px;
+      }
+    
+    .texto-brasil .texto-normal, .texto-zidane .texto-normal, .texto .texto-normal{
+        font-size: 12px;
+      }
+
+    .texto .subtitulo, .texto-brasil .subtitulo, .texto-zidane .subtitulo{
+        font-size: 14px;
+    }
+
+    .video video{
+        margin-bottom: 70px;
+        margin-top: 80px;
+        width: 100%;
+        border-radius: 0;
+    }
+    
+    .abrir{
+        width: 65%;
+    }
+
+    .jugadores, .jugadores2{
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+

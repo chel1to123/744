@@ -1,0 +1,111 @@
+@font-face {
+    font-family: Righteous;
+    src: url(../Fonts/Righteous-Regular.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Righteous;
+    text-decoration: none;
+}
+
+body{
+    background-color: rgb(20, 20, 20);
+}
+
+html, body {
+    scroll-behavior: smooth;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgb(87, 88, 88);
+    background-color: #141414;
+    z-index: 10;
+}
+      
+.logo a{
+    color: rgb(211, 208, 66);
+    font-family: Righteous;
+    font-size: 35px;
+    font-weight: bold;
+    padding-left: 30px;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+}
+nav a{
+    font-size: 25px;
+    color: rgb(211, 208, 66);
+    font-family: righteous;
+    margin: 31px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+nav a:hover{
+    background-color: rgb(66, 64, 64);
+}
+
+main{
+    display: flex;
+}
+.imagen-principal{
+    width: 40%;
+    position: static;
+}
+
+.imagen-principal img{
+    width: 91%;
+    object-fit: cover;
+}
+.contenedor{
+    width: 60%;
+    height: 522px;
+    display: flex;
+    overflow-y: auto;
+}
+
+.imagen{
+    margin-right: 10px;
+    position: relative;
+}
+.letra{
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+}
+
+.letra h5{
+    font-size: 25px;
+}
+.letra h5, .letra p{
+    margin: 0;
+}
+
+ul{
+    list-style: none;
+}
+.imagen img{
+    width: 720px;
+    height: 500px;
+    object-fit: cover;
+}
